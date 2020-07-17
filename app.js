@@ -4,13 +4,30 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+function rand(min, max) {
+  let randomNum = Math.random() * (max - min) + min;
+  return Math.floor(randomNum);
+}
+let randNum = rand(1, 2)
+console.log(randNum)
+
+let indexRouter
+
+if (randNum === 1) {
+  indexRouter = require('.routes/index')
+} else {
+  indexRouter = require ('.routes/hike')
+}
+
+
+
+// var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var hike = require('./routes/hike');
+// var hike = require('./routes/hike');
 
 var app = express();
-app.get('/hikes', hike.index);
-app.post('/add_hike', hike.add_hike);
+// app.get('/hikes', hike.index);
+// app.post('/add_hike', hike.add_hike);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
