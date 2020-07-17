@@ -1,0 +1,3 @@
+[submodule "aws-elastic-beanstalk-cli-setup"]
+path = aws-elastic-beanstalk-cli-setup
+url = git@github.com:anismemon/test-app.git
