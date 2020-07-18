@@ -4,26 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// function rand(min, max) {
-//   let randomNum = Math.random() * (max - min) + min;
-//   return Math.floor(randomNum);
-// }
-// let number = rand(1, 2)
-// console.log(number)
-
-// let indexRouter
-
-// if (randNum === 1) {
-//   indexRouter = require('.routes/index')
-// } else {
-//   indexRouter = require ('.routes/hike')
-// }
-
-
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-// var hike = require('./routes/hike');
+// var indexRouter = require('./routes/' + index);
+// var usersRouter = require('./routes/users');
+// var hikeRouter = require('./routes/hike');
 
 var app = express();
 // app.get('/hikes', hike.index);
@@ -40,7 +25,8 @@ app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
+// app.use('/hikes', hikeRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
